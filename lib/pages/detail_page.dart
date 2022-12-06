@@ -1,6 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo_pokedex/models/pokemon_model.dart';
+import 'package:flutter_codigo_pokedex/ui/general/colors.dart';
+import 'package:flutter_codigo_pokedex/ui/widgets/item_data_widget.dart';
 import 'package:pokemon_app/models/pokemon_model.dart';
 import 'package:pokemon_app/ui/general/colors.dart';
 import 'package:pokemon_app/ui/widgets/item_data_widget.dart';

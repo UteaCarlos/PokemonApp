@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo_pokedex/models/pokemon_model.dart';
+import 'package:flutter_codigo_pokedex/pages/detail_page.dart';
+import 'package:flutter_codigo_pokedex/ui/general/colors.dart';
+import 'package:flutter_codigo_pokedex/ui/widgets/item_type_widget.dart';
 import 'package:pokemon_app/models/pokemon_model.dart';
 import 'package:pokemon_app/pages/detail_page.dart';
 import 'package:pokemon_app/ui/general/colors.dart';
@@ -12,20 +16,25 @@ class ItemPokemonWidget extends StatelessWidget {
 
   ItemPokemonWidget({
     //required this.name,
-   // required this.image,
-   // required this.types,
-   required this.pokemon,
+    // required this.image,
+    // required this.types,
+    required this.pokemon,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-     onTap: (){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailPage(pokemon: pokemon,)));
-     },
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => DetailPage(
+                      pokemon: pokemon,
+                    )));
+      },
       child: Container(
         decoration: BoxDecoration(
-          color:colorsPokemon[pokemon.type.first],
+          color: colorsPokemon[pokemon.type.first],
           borderRadius: BorderRadius.circular(18.0),
         ),
         child: Stack(
@@ -52,14 +61,15 @@ class ItemPokemonWidget extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-              //    Column(
-              //      children: 
-               //       types.map((e) => ItemTypeWidget()).toList(),
-              //    ),
-              ...pokemon.type.map((e) => ItemTypeWidget(text: e,)).toList(),
-    
-    
-    
+                  //    Column(
+                  //      children:
+                  //       types.map((e) => ItemTypeWidget()).toList(),
+                  //    ),
+                  ...pokemon.type
+                      .map((e) => ItemTypeWidget(
+                            text: e,
+                          ))
+                      .toList(),
                 ],
               ),
             ),
