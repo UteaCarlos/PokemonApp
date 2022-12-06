@@ -12,25 +12,20 @@ class ItemPokemonWidget extends StatelessWidget {
 
   ItemPokemonWidget({
     //required this.name,
-    // required this.image,
-    // required this.types,
-    required this.pokemon,
+   // required this.image,
+   // required this.types,
+   required this.pokemon,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => DetailPage(
-                      pokemon: pokemon,
-                    )));
-      },
+     onTap: (){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailPage(pokemon: pokemon,)));
+     },
       child: Container(
         decoration: BoxDecoration(
-          color: colorsPokemon[pokemon.type.first],
+          color:colorsPokemon[pokemon.type.first],
           borderRadius: BorderRadius.circular(18.0),
         ),
         child: Stack(
@@ -57,15 +52,14 @@ class ItemPokemonWidget extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  //    Column(
-                  //      children:
-                  //       types.map((e) => ItemTypeWidget()).toList(),
-                  //    ),
-                  ...pokemon.type
-                      .map((e) => ItemTypeWidget(
-                            text: e,
-                          ))
-                      .toList(),
+              //    Column(
+              //      children: 
+               //       types.map((e) => ItemTypeWidget()).toList(),
+              //    ),
+              ...pokemon.type.map((e) => ItemTypeWidget(text: e,)).toList(),
+    
+    
+    
                 ],
               ),
             ),

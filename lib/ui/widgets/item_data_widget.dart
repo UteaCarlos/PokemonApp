@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 class ItemDataWidget extends StatelessWidget {
+  
   String title;
   String data;
   ItemDataWidget({
     required this.title,
     required this.data,
-  });
+  }
+ 
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,9 @@ class ItemDataWidget extends StatelessWidget {
               color: Colors.black45,
             ),
           ),
-          Text(data),
+          Text(
+            data
+            ),
         ],
       ),
     );

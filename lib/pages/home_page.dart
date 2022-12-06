@@ -28,11 +28,9 @@ class _HomePageState extends State<HomePage> {
     http.Response response = await http.get(_uri);
     if (response.statusCode == 200) {
       Map<String, dynamic> myMap = json.decode(response.body);
-      //  pokemons = myMap["pokemon"];
-      pokemonsModel = myMap["pokemon"]
-          .map<PokemonModel>((e) => PokemonModel.fromJson(e))
-          .toList();
-      print(pokemonsModel);
+    //  pokemons = myMap["pokemon"];
+    pokemonsModel = myMap["pokemon"].map<PokemonModel>((e)=>PokemonModel.fromJson(e)).toList();
+    print(pokemonsModel);
       setState(() {});
 
 //pokemons.forEach((element){
@@ -68,16 +66,18 @@ class _HomePageState extends State<HomePage> {
                     mainAxisSpacing: 12.0,
                     crossAxisSpacing: 12.0,
                     childAspectRatio: 1.35,
-                    children: pokemonsModel
+                    children:
+                        pokemonsModel
                         .map(
                           (e) => ItemPokemonWidget(
-                            // name: e.name,
+                           // name: e.name,
                             //image: e.img,
                             //types: e.type,
                             pokemon: e,
-                          ),
-                        )
-                        .toList()),
+                            ),
+                            )
+                            .toList()
+                ),
               ],
             ),
           ),
